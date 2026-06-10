@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoCampo — Agro Forte, Futuro Sustentável</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loading-leaf">🌿</div>
+    <h2 style="margin-top: 15px; font-weight: 600;">EcoCampo</h2>
+    <p style="color: var(--texto-seco); font-size: 0.9rem;">Carregando monitoramento rural...</p>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">🌱 Eco<span>Campo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Painel</a></li>
+      <li><a href="denuncia.html">Nova Denúncia</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-dark-toggle" id="themeBtn">🌙</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Preservando o Nosso Campo com <span>Inteligência</span></h1>
+    <p>Plataforma ativa de monitorização ambiental e suporte sustentável ao produtor rural do Programa Agrinho 2026.</p>
+    <a href="denuncia.html" class="btn btn-primary">Registrar Ocorrência Florestal</a>
+  </section>
+
+  <!-- MAP & GRAPH INTERACTION -->
+  <main class="main-grid">
+    <div class="card" style="grid-column: span 2; min-height: 400px;">
+      <h3 style="margin-bottom: 15px;">📍 Mapa Interativo de Ocorrências</h3>
+      <div id="map" style="height: 350px; border-radius: 8px; border: 1px solid var(--cinza-mid);"></div>
+    </div>
+    
+    <div class="card">
+      <h3 style="margin-bottom: 15px;">📊 Estatísticas de Impacto</h3>
+      <canvas id="chartImpacto" style="max-height: 350px;"></canvas>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script src="app.js"></script>
+  <script src="mapa.js"></script>
+  <script src="grafico.js"></script>
+</body>
+</html>

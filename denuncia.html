@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nova Denúncia — EcoCampo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">🌱 Eco<span>Campo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Painel</a></li>
+      <li><a href="denuncia.html" class="active">Nova Denúncia</a></li>
+    </ul>
+    <button class="btn-dark-toggle" id="themeBtn">🌙</button>
+  </nav>
+
+  <!-- FORM CONTAINER -->
+  <div style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
+    <div class="card">
+      <h2 style="margin-bottom: 10px;">📝 Relatar Fato Ambiental</h2>
+      <p style="color: var(--texto-seco); margin-bottom: 25px; font-size: 0.9rem;">Ajude a proteger os nossos ecossistemas rurais fornecendo dados precisos.</p>
+      
+      <form id="formDenuncia">
+        <div class="form-group">
+          <label for="autor">Seu Nome / Produtor</label>
+          <input type="text" id="autor" class="form-control" placeholder="Ex: João Silva (Pode ser anónimo)" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tipo">Categoria do Incidente</label>
+          <select id="tipo" class="form-control" required>
+            <option value="queimadas">🔥 Queimada Irregular</option>
+            <option value="desmatamento">🌳 Desmatamento / Corte Proibido</option>
+            <option value="poluicao">🏭 Poluição Química / Solo</option>
+            <option value="agua">💧 Desperdício / Poluição de Água</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição dos Factos</label>
+          <textarea id="descricao" class="form-control" rows="4" placeholder="Detalhes da área afetada..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Denúncia Segura</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
